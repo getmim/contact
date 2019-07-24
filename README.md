@@ -1,5 +1,7 @@
 # contact
 
+Adalah module yang menangani contact page site. Setiap kontak masuk akan menambahkan pada tabel `contact` dan akan mengirim ke email admin juga.
+
 ## Instalasi
 
 Jalankan perintah di bawah di folder aplikasi:
@@ -46,7 +48,7 @@ Kemudian library tersebut juga digunakan untuk menambahkan reply dari admin:
 use Contact\Library\Contact;
 use Contact\Model\Contact as MContact;
 
-$new_reply = (object)[
+$new_reply = [
     'user'  => 1,
     'reply' => '...'
 ];
