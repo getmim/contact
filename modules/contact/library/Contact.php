@@ -24,6 +24,8 @@ class Contact
      *  - content
      */
     static function add(array $contact): ?object {
+        $contact['ip'] = \Mim::$app->req->getIP();
+        
         $id = _Contact::create($contact);
         if(!$id)
             return null;

@@ -14,13 +14,21 @@ return [
             ],
 
             // visitor area
+            'ip' => [
+                'type' => 'VARCHAR',
+                'length' => 50,
+                'attrs' => [
+                    'null' => false
+                ],
+                'index' => 2000
+            ],
             'fullname' => [
                 'type' => 'VARCHAR',
                 'length' => 50,
                 'attrs' => [
                     'null' => false 
                 ],
-                'index' => 2000
+                'index' => 3000
             ],
             'email' => [
                 'type' => 'VARCHAR',
@@ -28,7 +36,7 @@ return [
                 'attrs' => [
                     'null' => false 
                 ],
-                'index' => 3000
+                'index' => 4000
             ],
             'subject' => [
                 'type' => 'VARCHAR',
@@ -36,12 +44,12 @@ return [
                 'attrs' => [
                     'null' => false 
                 ],
-                'index' => 4000
+                'index' => 5000
             ],
             'content' => [
                 'type' => 'TEXT',
                 'attrs' => [],
-                'index' => 5000
+                'index' => 6000
             ],
 
             'user' => [
@@ -49,12 +57,12 @@ return [
                 'attrs' => [
                     'unsigned' => true
                 ],
-                'index' => 6000
+                'index' => 7000
             ],
             'reply' => [
                 'type' => 'TEXT',
                 'attrs' => [],
-                'index' => 7000
+                'index' => 8000
             ],
 
             'seen' => [
@@ -62,14 +70,14 @@ return [
                 'attrs' => [
                     'null' => true
                 ],
-                'index' => 8000
+                'index' => 9000
             ],
             'replyed' => [
                 'type' => 'DATETIME',
                 'attrs' => [
                     'null' => true
                 ],
-                'index' => 9000
+                'index' => 10000
             ],
             'updated' => [
                 'type' => 'TIMESTAMP',
@@ -77,14 +85,21 @@ return [
                     'default' => 'CURRENT_TIMESTAMP',
                     'update' => 'CURRENT_TIMESTAMP'
                 ],
-                'index' => 10000
+                'index' => 11000
             ],
             'created' => [
                 'type' => 'TIMESTAMP',
                 'attrs' => [
                     'default' => 'CURRENT_TIMESTAMP'
                 ],
-                'index' => 11000
+                'index' => 12000
+            ]
+        ],
+        'indexes' => [
+            'by_ip' => [
+                'fields' => [
+                    'ip' => []
+                ]
             ]
         ]
     ],
