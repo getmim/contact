@@ -43,8 +43,9 @@ class Contact
             'next'    => ''
         ];
 
-        if(\Mim::$app->config->contact->replyRoute)
-            $params['next'] = \Mim::$app->router->to(\Mim::$app->config->contact->replyRoute, $contact);
+        $reply_route = \Mim::$app->config->contact->replyRoute ?? null;
+        if($reply_route)
+            $params['next'] = \Mim::$app->router->to($reply_route, (array)$contact);
 
         $mail = [
             'to' => [
@@ -53,7 +54,7 @@ class Contact
                     'email' => \Mim::$app->setting->contact_admin_email
                 ]
             ],
-            'subject' => 'New Contact From ' . $xcontact->fullname->safe . ' : ' . $xcontact->subject->safe,
+            'subject' => 'New Contact From ' . $xcontact->fullname . ' : ' . $xcontact->subject,
             'text' => $xcontact->content->safe,
             'view' => [
                 'path' => 'contact/admin',
@@ -97,8 +98,8 @@ class Contact
                     'email' => $xcontact->email->safe
                 ]
             ],
-            'subject' => 'Re: ' . $xcontact->subject->safe,
-            'text' => $xcontact->reply->safe,
+            'subject' => 'Re: ' . $xcontact->subject,
+            'text' => $xcontact->reply->clean,
             'view' => [
                 'path' => 'contact/user',
                 'params' => $params

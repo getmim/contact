@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'contact',
-    '__version' => '0.0.2',
+    '__version' => '0.0.3',
     '__git' => 'git@github.com:getmim/contact.git',
     '__license' => 'MIT',
     '__author' => [
@@ -94,8 +94,5 @@ return [
                 ]
             ]
         ]
-    ],
-    'contact' => [
-        'replyRoute' => ''
     ]
 ];
