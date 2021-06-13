@@ -106,7 +106,7 @@ return [
     'SiteSetting\\Model\\SiteSetting' => [
         'data' => [
             'name' => [
-                [
+                'contact_admin_email' => [
                     'name' => 'contact_admin_email',
                     'type' => 7,
                     'group' => 'Contact',
