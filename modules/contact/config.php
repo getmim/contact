@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'contact',
-    '__version' => '0.0.4',
+    '__version' => '0.0.5',
     '__git' => 'git@github.com:getmim/contact.git',
     '__license' => 'MIT',
     '__author' => [
@@ -91,6 +91,23 @@ return [
                 ],
                 'created' => [
                     'type' => 'date'
+                ]
+            ]
+        ]
+    ],
+    'adminSetting' => [
+        'menus' => [
+            'site-contact' => [
+                'label' => 'Contact',
+                'icon' => '<i class="fas fa-file-signature"></i>',
+                'info' => 'Change site contact preference',
+                'perm' => 'update_site_setting',
+                'index' => 0,
+                'options' => [
+                    'site-contact' => [
+                        'label' => 'Change settings',
+                        'route' => ['adminSiteSettingSingle',['group' => 'Contact']]
+                    ]
                 ]
             ]
         ]
